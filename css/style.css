@@ -1,0 +1,245 @@
+/**************************************************
+Fonts
+Droid Serif
+Droid Sans
+Droid Sans Mono
+
+Font Scaling
+6.854rem
+4.236rem
+2.618rem
+1.618rem
+1.0rem
+0.618rem
+
+Colour scheme
+
+**************************************************/
+@import url('https://fonts.googleapis.com/css?family=Anton|Black+And+White+Picture|Dancing+Script|Gloria+Hallelujah|Indie+Flower|Josefin+Slab');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Droid Sans', 'more font stack stuff', sans-serif;
+}
+/*************************** 
+DEFAULTS - MOBILE FIRST 
+***************************/
+
+.masthead{
+    background-image:url("https://placeimg.com/1000/480/nature");
+    border-bottom: 8px solid brown;
+    border-top: 8px solid brown;
+    /*Set a border for header*/
+}
+
+.main p img{
+    height: 250px;
+    width: 300px;
+    /*Adjust the pic in a proper size*/
+    
+}
+
+h1{
+    font: bold 7rem 'Josefin Slab', serif;/*Provide it with required type of font style*/
+    color: hsla(360, 100%, 100%, 1);
+    padding: 6rem;
+    text-shadow: 3px 3px green;
+}
+h2{
+    font: bold 3.618rem 'Dancing Script', cursive;/*Provide it with required type of font style*/
+    padding:2rem;
+    text-shadow: 3px 2px grey;
+    text-align: left;
+}
+li, p, a{
+        font-family: 'Anton', sans-serif;
+
+}
+pre, code, kbd{
+    font: normal 1.0rem 'Droid Sans Mono', 'more font stack stuff', 
+}
+/***************************
+    LAYOUT - MOBILE FIRST
+***************************/
+.wrapper{
+    width: 95%;
+    margin: 0 auto;
+    background-color: hsla(168, 50%, 56%, 0.42);
+}
+header{
+    width: 100%;
+}
+nav{
+    width: 100%;
+    font-family: 'Black And White Picture', sans-serif; 
+    
+}
+.mainnav{
+  padding: 3rem;
+  
+}
+nav>ul{
+    width: 100%;
+    
+}
+
+
+nav li{
+    width: 100%;
+    list-style: none;
+}
+
+nav a,
+nav a:link,
+nav a:visited{
+    display: block;
+    font: bold 2.618rem 'Anton', sans-serif;
+    text-align: center;
+    text-decoration-line: none;/*Get rid of the bottom line for the link*/
+    font-size: 5vw;/*vw--viewpoint width, auto responsive text*/
+    transition: 0.3s;
+}
+nav a:active,
+nav a:focus,
+nav a:hover{
+    font-size: 480%;
+    color:hsla(30, 41%, 28%, 1);
+}
+main{
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    
+}
+.colfirst{
+    float: none;
+    width: 100%;
+    
+    
+}
+.colfirst img{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    background-color: azure;
+    border: 6px solid black;
+    padding: 2.618rem;
+}
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;/*Assign those footer into row direction*/
+}
+.footer p{
+}
+.footer ul{
+    display: flex;
+    flex-direction: row;
+    
+}
+.footer li{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+
+@media screen and (min-width: 1200px){
+    .wrapper{
+        display: grid;
+    }
+    
+    nav{
+        display: grid;
+        grid-row-start: 2;
+        grid-column-start:1;
+        grid-column-end: 2
+        grid:0/500px;
+        min-width: 360px;
+        /*By using the grid sets those things into expected position*/
+    }
+    .main{
+        display: grid;
+        grid-row-start: 2;
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-gap: 100px;
+        min-width: 840px;
+        
+    }
+    .masthead{
+        min-height: 350px;
+        min-width: 1200px;
+        grid-column-start: 1;
+        grid-column-end:4;
+    }
+    .colfirst{
+        display: grid;
+        grid-column-start: 1;
+    }
+    .colsecond{
+        display: grid;
+        grid-column-start: 2;
+    }
+    .footer{
+        display: grid;
+        grid-row-start: 3;
+    }
+    
+}
+@media screen and (max-width: 1200px){
+    .mainnav{
+        display:flex;
+        flex-direction:row;
+        /*Make the nav into row direction*/
+    }
+    
+    .main{
+        display: grid;
+        grid-row-start: 3;
+    }
+    .colfirst{
+        display: grid;
+        grid-column-start: 1;
+    }
+    .colsecond{
+        display: grid;
+        grid-column-start: 2;
+    }
+}
+@media screen and (max-width: 800px){
+    .mainnav{
+        border:3px solid black;
+    }
+}
+@media screen and (max-width:600px){
+    .colfirst{
+        display: grid;
+        
+        grid-column-end: 1;
+        grid-row-start: 1;
+    }
+    .colsecond{
+        display: grid;
+        
+        grid-column-end: 1;
+        grid-row-start:2;
+    }
+    .mainnav{
+        display:flex;
+        flex-direction: column;
+        border:none;
+        /*turn the nav into column direction*/
+    }
+    .mainnav li{
+        border: 3px solid black;
+    }
+    
+}
